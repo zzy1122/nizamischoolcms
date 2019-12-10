@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% include "adminNav.html" %}
+{% block body %}
+<form action="/newStudent" method="post">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="hidden" name="role" class="form-control" id="role" value="Student">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputName1">Name</label>
+    <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Password">
+  </div>
+    <div class="form-group">
+        <label for="exampleFormControlClass1">Student Class</label>
+        <select class="form-control" name="stdclass" id="exampleFormControlClass1">
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+            <option value="5th">5th</option>
+            <option value="6th">6th</option>
+            <option value="7th">7th</option>
+            <option value="8th">8th</option>
+            <option value="9th">9th</option>
+            <option value="10th">10th</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputRollNum1">Roll #</label>
+        <input type="number" name="rollnum" class="form-control" id="exampleInputRollNum1" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputContact1">Contact</label>
+        <input type="number" name="contact" class="form-control" id="exampleInputContact1" placeholder="Password">
+    </div>
+    <!--<div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>-->
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

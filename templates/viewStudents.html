@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% include "adminNav.html" %}
+{% block body %}
+        <table class="table table-striped table-bordered table-hover table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Class</th>
+                <th>Roll No.</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+          <tbody>
+        {% for student in students %}
+            <tr>
+                <form action="/updateStudent" method="post">
+                <td><input type="text" name="email" value="{{ student.email }}"></td>
+                <td><input type="text" name="name" value="{{ student.name }}"></td>
+                <td><input type="text" name="contact" value="{{ student.contact }}"></td>
+                <td><input type="text" name="stdclass" value="{{ student.stdclass }}"></td>
+                <td><input type="text" name="rollnum" value="{{ student.rollnum }}"></td>
+                <td><input type="text" name="password" value="{{ student.password }}"></td>
+                <td>
+                  <input name="target_email" value='{{student.email}}' type="hidden" />
+                 <button class="btn btn-primary">UPDATE</button>
+                </td>
+                </form>
+                <td>
+                    <form action="/deleteStudent" method="post">
+                        <input name="target_email" value='{{student.email}}' type="hidden" />
+                        <button class="btn btn-danger">DELETE</button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+          </tbody>
+      </table>
+{% endblock %}
