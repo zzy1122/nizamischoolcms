@@ -1,6 +1,6 @@
 from flask import Flask, session, render_template, request , redirect , flash , url_for
 from flask_sqlalchemy import SQLAlchemy
-from flask_login import LoginManager, UserMixin , current_user , login_user, login_required
+# from flask_login import LoginManager, UserMixin , current_user , login_user, login_required
 from werkzeug.urls import url_parse
 import os
 import string
@@ -350,4 +350,4 @@ def test():
     return render_template('test.html', ab=ab)
 
 
-app.run(port=5001, debug=True)
+#app.run(port=5001, debug=True)
